@@ -18,6 +18,6 @@ shell(
     "INPUT={snakemake.input} "
     "OUTPUT={snakemake.output.txt} "
     "HISTOGRAM_FILE={snakemake.output.pdf} "
-    "MINIMUM_PCT=null "
     "{log}"
+    " && touch {snakemake.input} {snakemake.output.pdf}"
 )
