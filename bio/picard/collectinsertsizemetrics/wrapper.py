@@ -14,10 +14,10 @@ java_opts = get_java_opts(snakemake)
 
 
 shell(
+    "touch {snakemake.input} && touch {snakemake.output.pdf} && "
     "picard CollectInsertSizeMetrics {java_opts} {extra} "
     "INPUT={snakemake.input} "
     "OUTPUT={snakemake.output.txt} "
     "HISTOGRAM_FILE={snakemake.output.pdf} "
     "{log}"
-    " && touch {snakemake.input} {snakemake.output.pdf}"
 )
