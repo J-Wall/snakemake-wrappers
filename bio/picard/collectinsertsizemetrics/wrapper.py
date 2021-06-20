@@ -15,9 +15,9 @@ java_opts = get_java_opts(snakemake)
 
 shell(
     "picard CollectInsertSizeMetrics {java_opts} {extra} "
-    "-INPUT {snakemake.input} "
-    "-OUTPUT {snakemake.output.txt} "
-    "-HISTOGRAM_FILE {snakemake.output.pdf} "
-    "-MINIMUM_PCT null "
+    "INPUT={snakemake.input} "
+    "OUTPUT={snakemake.output.txt} "
+    "HISTOGRAM_FILE={snakemake.output.pdf} "
+    "MINIMUM_PCT=null "
     "{log}"
 )
