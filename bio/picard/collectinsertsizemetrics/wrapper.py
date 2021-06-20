@@ -14,7 +14,7 @@ java_opts = get_java_opts(snakemake)
 
 
 shell(
-    "echo 'touching {snakemake.input} and {snakemake.output}' && "
+    "echo 'touching {snakemake.output.txt} and {snakemake.output.pdf}' && "
     "touch {snakemake.input} && touch {snakemake.output.pdf} && "
     "echo 'done. Running picard.' && "
     "picard CollectInsertSizeMetrics {java_opts} {extra} "
